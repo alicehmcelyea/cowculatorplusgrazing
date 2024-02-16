@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GHG Calculator</title>
+</head>
+<body>
+<div class="layout">
+    <div> 
+        <h1>Greenhouse Gas Calculator</h1>
+    </div>
+    <div class="tab">
+        <button class="tablinks" onclick="openMethod(event, 'manure')">Manure</button>
+        <button class="tablinks" onclick="openMethod(event, 'pasture')">Pasture/Range</button>
+      </div>
+<div class="manure tabcontent">
+    <div class="cowculator">
+        <div class="calculator-inputs">
+            <div class="two-column">
+                <div class="input-item">
+                    <h2><label for= cowNumber>Number of Cows*</label></h2>
+                    <input class="input-field" id="cowNumber">
+                </div>
+                <div class="input-item">
+                    <h2><label for= monthsPasture>Months at Pasture*</label></h2>
+                    <input class="input-field" id="monthsPasture">
+                </div>    
+            </div>
+                <div class="input-item-2">
+                    <h2>Method*</h2>
+                    <select class="input-field-2" id="methodSelection">
+                        <option value="" >Select one</option>
+                        <option value="Scrape">Scrape</option>
+                        <option value="Flush">Flush</option>
+                        <option value="Grazing">Grazing</option>
+                        </select>
+                </div>
+
+                <div class="practices-wrapper">
+                    <h2>Climate Smart Ag Practices*</h2>
+                    <div class="practice-parent-category">
+                        <div class="body-copy-bold"><input type="checkbox" class="checked" id="compost">Compost Bedded Pack Barn</div>
+                    </div>
+
+                    <div class="frame-1">
+                        <div class="body-copy-bold">Separation + Solids Management</div>
+                        <div class="body-copy-regular">Weeping Wall</div>
+                        <div class="practice-subcategories">
+                            <div class="body-copy-regular"><input type="checkbox" class="checked" id="weepingSolidStorage">Solid Storage</div>
+                            <div class="body-copy-regular"><input type="checkbox" class="checked" id="weepingInVessel">In-Vessel/Static Pile</div>    
+                            <div class="body-copy-regular"><input type="checkbox" class="checked" id="weepingWindrow">Windrow</div>
+                        </div>
+
+                        <div class="body-copy-regular">Stationary Screen</div>
+                        <div class="practice-subcategories">
+                            <div class="body-copy-regular"><input type="checkbox" class="checked" id="stationarySolidStorage">Solid Storage</div>
+                            <div class="body-copy-regular"><input type="checkbox" class="checked" id="stationaryInVessel">In-Vessel/Static Pile</div>    
+                            <div class="body-copy-regular"><input type="checkbox" class="checked" id="stationaryWindrow">Windrow</div>
+                        </div>
+
+                        <div class="body-copy-regular">Vibrating Screen</div>
+                        <div class="practice-subcategories">
+                            <div class="body-copy-regular"><input type="checkbox" class="checked" id="vibratingSolidStorage">Solid Storage</div>
+                            <div class="body-copy-regular"><input type="checkbox" class="checked" id="vibratingInVessel">In-Vessel/Static Pile</div>    
+                            <div class="body-copy-regular"><input type="checkbox" class="checked" id="vibratingWindrow">Windrow</div>
+                        </div>
+
+                        <div class="body-copy-regular">Screw Press</div>
+                        <div class="practice-subcategories">
+                            <div class="body-copy-regular"><input type="checkbox" class="checked" id="screwSolidStorage">Solid Storage</div>
+                            <div class="body-copy-regular"><input type="checkbox" class="checked" id="screwInVessel">In-Vessel/Static Pile</div>    
+                            <div class="body-copy-regular"><input type="checkbox" class="checked" id="screwWindrow">Windrow</div>
+                        </div>
+
+                        <div class="body-copy-regular">Centrifuge</div>
+                        <div class="practice-subcategories">
+                            <div class="body-copy-regular"><input type="checkbox" class="checked" id="centrifugeSolidStorage">Solid Storage</div>
+                            <div class="body-copy-regular"><input type="checkbox" class="checked" id="centrifugeInVessel">In-Vessel/Static Pile</div>    
+                            <div class="body-copy-regular"><input type="checkbox" class="checked" id="centrifugeWindrow">Windrow</div>
+                        </div>
+
+                        <div class="body-copy-regular">Roller Drum</div>
+                        <div class="practice-subcategories">
+                            <div class="body-copy-regular"><input type="checkbox" class="checked" id="rollerSolidStorage">Solid Storage</div>
+                            <div class="body-copy-regular"><input type="checkbox" class="checked" id="rollerInVessel">In-Vessel/Static Pile</div>    
+                            <div class="body-copy-regular"><input type="checkbox" class="checked" id="rollerWindrow">Windrow</div>
+                        </div>
+
+                        <div class="body-copy-regular">Belt Press/Screen</div>
+                        <div class="practice-subcategories">
+                            <div class="body-copy-regular"><input type="checkbox" class="checked" id="beltSolidStorage">Solid Storage</div>
+                            <div class="body-copy-regular"><input type="checkbox" class="checked" id="beltInVessel">In-Vessel/Static Pile</div>    
+                            <div class="body-copy-regular"><input type="checkbox" class="checked" id="beltWindrow">Windrow</div>
+                        </div>
+                
+                    </div>
+
+                    <div class="frame-2">
+                        <div class="body-copy-bold">Conversion from Flush to Scrape Manure Collection</div>
+                        <div class="practice-subcategories">
+                            <div class="body-copy-regular"><input type="checkbox" class="checked" id="conversionSolidStorage">Solid Storage</div>
+                            <div class="body-copy-regular"><input type="checkbox" class="checked" id="conversionInVessel">In-Vessel/Static Pile</div>    
+                            <div class="body-copy-regular"><input type="checkbox" class="checked" id="conversionWindrow">Windrow</div>
+                        </div>
+                    </div>
+
+            </div>
+
+        <button class="body-copy-regular button" onclick="calculateReductions(); showAvoidance(); scrollToTop();">Calculate</button>
+        
+        </div>
+
+        <div class="calculator-outputs">
+            <div class="reductions-total">
+                <div>CO2 Reductions Total</div>
+                <div class="units" id="totalUnitsResult">Units</div>
+            </div>
+            <hr>
+            <div class="equivalent-items">
+                <div class="h2-white">That's equivilant to:</div>
+                <div>
+                    <div class="caption-bold">VEHICLES*</div>
+                    <div class="body-copy-bold-blue" id="vehiclesResult"></div>
+                </div>
+
+                <div>
+                    <div class="caption-bold">MILES DRIVEN*</div>
+                    <div class="body-copy-bold-blue" id="milesResult"></div>
+                </div>
+
+                <div>
+                    <div class="caption-bold">SMARTPHONES CHARGED FOR 1 YEAR</div>
+                    <div class="body-copy-bold-blue" id="smartphonesResult"></div>
+                </div>
+            </div>
+            <div class="caption-regular">*Based on the average gas-powered passenger vehicle</div>
+        </div>
+    </div>
+    
+</div>
+
+<div class="pasture tabcontent">
+    <div class="cowculator">
+        <div class="calculator-inputs">
+            <div class="two-column">
+                <div class="input-item">
+                    <h2><label for= cowNumber>Number of Cows</label></h2>
+                    <input disabled class="input-field" id="cowNumber" placeholder="N/A">
+                </div>
+                <div class="input-item">
+                    <h2><label for= acres>Acres/Linear Feet*</label></h2>
+                    <input class="input-field" id="acres">
+                </div>    
+            </div>
+                <div class="input-item-2">
+                    <h2>Method</h2>
+                    <select class="input-field-2" id="methodSelection" placeholder="N/A">
+                        <option disabled value="N/A">N/A</option>
+                        </select>
+                </div>
+
+                <div class="practices-wrapper">
+                    <h2>Climate Smart Ag Practices*</h2>
+
+                    <div class="frame-3">
+                        <div class="body-copy-regular">Prescribed Grazing (acres)</div>
+                        <div class="practice-subcategories">
+                            <div class="body-copy-regular"><input type="checkbox" class="checked" id="prescribedA">Non-irrigated pasture or rangeland</div>
+                            <div class="body-copy-regular"><input type="checkbox" class="checked" id="prescribedB">Irrigated pasture or rangeland</div>    
+                        </div>
+
+                        <div class="body-copy-regular">Range Planting (acres)</div>
+                        <div class="practice-subcategories">
+                            <div class="body-copy-regular"><input type="checkbox" class="checked" id="rangeA">Native species, non-native species, shrub plugs</div>
+                        </div>
+
+                        <div class="body-copy-regular">Compost Application (acres)</div>
+                        <div class="practice-subcategories">
+                            <div class="body-copy-regular"><input type="checkbox" class="checked" id="compostApplicationA">Grazing land, C:N>11, 6-8T/ac</div>
+                            <div class="body-copy-regular"><input type="checkbox" class="checked" id="compostApplicationB">Cropland, C:N less than or equal to 11, 3-5T/ac</div>    
+                            <div class="body-copy-regular"><input type="checkbox" class="checked" id="compostApplicationC">Irrigated pasture, C:N>11, 6-8T/ac</div>
+                            <div class="body-copy-regular"><input type="checkbox" class="checked" id="compostApplicationD">Cropland, C:N >11, 6-8T/ac</div>
+
+                        </div>
+
+                        <div class="body-copy-regular">Hedgerow planting (Linear Feet)</div>
+                        <div class="practice-subcategories">
+                            <div class="body-copy-regular"><input type="checkbox" class="checked" id="hedgerowA">Grassland</div>
+                            <div class="body-copy-regular"><input type="checkbox" class="checked" id="hedgerowB">Cropland</div>    
+                        </div>
+
+                        <div class="body-copy-regular">Riparian Forest Buffer (acres)</div>
+                        <div class="practice-subcategories">
+                            <div class="body-copy-regular"><input type="checkbox" class="checked" id="riparianA">Grassland</div>
+                            <div class="body-copy-regular"><input type="checkbox" class="checked" id="riparianB">Cropland</div>    
+                        </div>
+
+                        <div class="body-copy-regular">Silvopasture (acres)</div>
+                        <div class="practice-subcategories">
+                            <div class="body-copy-regular"><input type="checkbox" class="checked" id="silvopastureA">All Land Types</div>
+                        </div>
+
+                        <div class="body-copy-regular">Tree/Shrub Establishment (acres)</div>
+                        <div class="practice-subcategories">
+                            <div class="body-copy-regular"><input type="checkbox" class="checked" id="treeA">Grassland</div>
+                            <div class="body-copy-regular"><input type="checkbox" class="checked" id="treeB">Cropland</div>  
+                        </div>
+
+                        <div class="body-copy-regular">Windbreak/Shelterbelt Establishment (Linear Feet)</div>
+                        <div class="practice-subcategories">
+                            <div class="body-copy-regular"><input type="checkbox" class="checked" id="windbreakA">Grassland</div>
+                            <div class="body-copy-regular"><input type="checkbox" class="checked" id="windbreakB">Cropland</div>  
+                        </div>
+                
+                    </div>
+
+            </div>
+
+        <button class="body-copy-regular button" onclick="calculateReductions(); showAvoidance(); scrollToTop();">Calculate</button>
+        
+        </div>
+
+        <div class="calculator-outputs">
+            <div class="reductions-total">
+                <div>CO2 Reductions Total</div>
+                <div class="units" id="grazingtotalUnitsResult">Units</div>
+            </div>
+            <hr>
+            <div class="equivalent-items">
+                <div class="h2-white">That's equivilant to:</div>
+                <div>
+                    <div class="caption-bold">VEHICLES*</div>
+                    <div class="body-copy-bold-blue" id="grazingvehiclesResult"></div>
+                </div>
+
+                <div>
+                    <div class="caption-bold">MILES DRIVEN*</div>
+                    <div class="body-copy-bold-blue" id="grazingmilesResult"></div>
+                </div>
+
+                <div>
+                    <div class="caption-bold">SMARTPHONES CHARGED FOR 1 YEAR</div>
+                    <div class="body-copy-bold-blue" id="grazingsmartphonesResult"></div>
+                </div>
+            </div>
+            <div class="caption-regular">*Based on the average gas-powered passenger vehicle</div>
+        </div>
+    </div>
+    
+</div>
+
+</div>
+</div>
+</div>
+
+</div>
+<script src="script.js"></script>
+</body>
+</html>
