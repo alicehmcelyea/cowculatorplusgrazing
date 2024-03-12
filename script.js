@@ -6,17 +6,25 @@ function isNumber(evt) {
     return false;
   }
   
-  document.querySelectorAll('.checked').forEach(function(checkbox) {
-      checkbox.addEventListener('change', function() {
-          if (checkbox.checked) {
-              document.querySelectorAll('.checked').forEach(function(other) {
-                  if (other !== checkbox) {
-                      other.checked = false;
-                  }
-              });
-          }
-      });
-  });
+// For checkboxes that allow multiple selections
+document.querySelectorAll('.checked-multiple').forEach(function(checkbox) {
+    // No special logic needed here; users can select multiple boxes freely
+});
+
+// For checkboxes that should be exclusive within their group
+document.querySelectorAll('.checked').forEach(function(checkbox) {
+    checkbox.addEventListener('change', function() {
+        if (checkbox.checked) {
+            // When a checkbox is checked, uncheck all others in the same group
+            document.querySelectorAll('.checked').forEach(function(other) {
+                if (other !== checkbox) {
+                    other.checked = false;
+                }
+            });
+        }
+    });
+});
+
   
   let totalUnits = 0;
 
@@ -62,8 +70,8 @@ function openMethod(evt, methodName) {
     document.querySelector("." + methodName).style.display = "block";
     evt.currentTarget.classList.add("active");
 
-    document.getElementById('totalUnitsResult').textContent = "Units"; // Reset to default or clear
-    document.getElementById('grazingtotalUnitsResult').textContent = "Units"; // Reset to default or clear
+    document.getElementById('totalUnitsResult').textContent = "MTCO₂e"; // Reset to default or clear
+    document.getElementById('grazingtotalUnitsResult').textContent = "MTCO₂e"; // Reset to default or clear
     document.getElementById('vehiclesResult').textContent = ""; // Clear the vehicles equivalent
     document.getElementById('milesResult').textContent = ""; // Clear the miles driven equivalent
     document.getElementById('smartphonesResult').textContent = ""; // Clear the smartphones charged equivalent
@@ -816,8 +824,9 @@ if (methodSelected === "Scrape") {
           if (windbreakAChecked) totalUnits += windbreakResultA;
           if (windbreakBChecked) totalUnits += windbreakResultB;
 
-document.getElementById('totalUnitsResult').textContent = `${totalUnits.toFixed(2)} (units)`;
-document.getElementById('grazingtotalUnitsResult').textContent = `${totalUnits.toFixed(2)} (units)`;
+          document.getElementById('totalUnitsResult').textContent = `${totalUnits.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})} MTCO₂e`;
+          document.getElementById('grazingtotalUnitsResult').textContent = `${totalUnits.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})} MTCO₂e`;
+          
 
 
 }

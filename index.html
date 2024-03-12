@@ -34,7 +34,6 @@
                         <option value="" >Select one</option>
                         <option value="Scrape">Scrape</option>
                         <option value="Flush">Flush</option>
-                        <option value="Grazing">Grazing</option>
                         </select>
                 </div>
 
@@ -114,8 +113,8 @@
 
         <div class="calculator-outputs">
             <div class="reductions-total">
-                <div>CO2 Reductions Total</div>
-                <div class="units" id="totalUnitsResult">Units</div>
+                <div>CO2 Avoidance Total</div>
+                <div class="units" id="totalUnitsResult">MTCO₂e</div>
             </div>
             <hr>
             <div class="equivalent-items">
@@ -144,21 +143,10 @@
 <div class="pasture tabcontent">
     <div class="cowculator">
         <div class="calculator-inputs">
-            <div class="two-column">
-                <div class="input-item">
-                    <h2><label for= cowNumber>Number of Cows</label></h2>
-                    <input disabled class="input-field" id="cowNumber" placeholder="N/A">
-                </div>
-                <div class="input-item">
-                    <h2><label for= acres>Acres/Linear Feet*</label></h2>
-                    <input class="input-field" id="acres">
-                </div>    
-            </div>
+
                 <div class="input-item-2">
-                    <h2>Method</h2>
-                    <select class="input-field-2" id="methodSelection" placeholder="N/A">
-                        <option disabled value="N/A">N/A</option>
-                        </select>
+                    <h2>Acres/Linear Feet*</h2>
+                    <input class="input-field-2" id="acres" >
                 </div>
 
                 <div class="practices-wrapper">
@@ -167,51 +155,51 @@
                     <div class="frame-3">
                         <div class="body-copy-regular">Prescribed Grazing (acres)</div>
                         <div class="practice-subcategories">
-                            <div class="body-copy-regular"><input type="checkbox" class="checked" id="prescribedA">Non-irrigated pasture or rangeland</div>
-                            <div class="body-copy-regular"><input type="checkbox" class="checked" id="prescribedB">Irrigated pasture or rangeland</div>    
+                            <div class="body-copy-regular"><input type="checkbox" class="checked-multiple" id="prescribedA">Non-irrigated pasture or rangeland</div>
+                            <div class="body-copy-regular"><input type="checkbox" class="checked-multiple" id="prescribedB">Irrigated pasture or rangeland</div>    
                         </div>
 
                         <div class="body-copy-regular">Range Planting (acres)</div>
                         <div class="practice-subcategories">
-                            <div class="body-copy-regular"><input type="checkbox" class="checked" id="rangeA">Native species, non-native species, shrub plugs</div>
+                            <div class="body-copy-regular"><input type="checkbox" class="checked-multiple" id="rangeA">Native species, non-native species, shrub plugs</div>
                         </div>
 
                         <div class="body-copy-regular">Compost Application (acres)</div>
                         <div class="practice-subcategories">
-                            <div class="body-copy-regular"><input type="checkbox" class="checked" id="compostApplicationA">Grazing land, C:N>11, 6-8T/ac</div>
-                            <div class="body-copy-regular"><input type="checkbox" class="checked" id="compostApplicationB">Cropland, C:N less than or equal to 11, 3-5T/ac</div>    
-                            <div class="body-copy-regular"><input type="checkbox" class="checked" id="compostApplicationC">Irrigated pasture, C:N>11, 6-8T/ac</div>
-                            <div class="body-copy-regular"><input type="checkbox" class="checked" id="compostApplicationD">Cropland, C:N >11, 6-8T/ac</div>
+                            <div class="body-copy-regular"><input type="checkbox" class="checked-multiple" id="compostApplicationA">Grazing land, C:N>11, 6-8T/ac</div>
+                            <div class="body-copy-regular"><input type="checkbox" class="checked-multiple" id="compostApplicationB">Cropland, C:N less than or equal to 11, 3-5T/ac</div>    
+                            <div class="body-copy-regular"><input type="checkbox" class="checked-multiple" id="compostApplicationC">Irrigated pasture, C:N>11, 6-8T/ac</div>
+                            <div class="body-copy-regular"><input type="checkbox" class="checked-multiple" id="compostApplicationD">Cropland, C:N >11, 6-8T/ac</div>
 
                         </div>
 
                         <div class="body-copy-regular">Hedgerow planting (Linear Feet)</div>
                         <div class="practice-subcategories">
-                            <div class="body-copy-regular"><input type="checkbox" class="checked" id="hedgerowA">Grassland</div>
-                            <div class="body-copy-regular"><input type="checkbox" class="checked" id="hedgerowB">Cropland</div>    
+                            <div class="body-copy-regular"><input type="checkbox" class="checked-multiple" id="hedgerowA">Grassland</div>
+                            <div class="body-copy-regular"><input type="checkbox" class="checked-multiple" id="hedgerowB">Cropland</div>    
                         </div>
 
                         <div class="body-copy-regular">Riparian Forest Buffer (acres)</div>
                         <div class="practice-subcategories">
-                            <div class="body-copy-regular"><input type="checkbox" class="checked" id="riparianA">Grassland</div>
-                            <div class="body-copy-regular"><input type="checkbox" class="checked" id="riparianB">Cropland</div>    
+                            <div class="body-copy-regular"><input type="checkbox" class="checked-multiple" id="riparianA">Grassland</div>
+                            <div class="body-copy-regular"><input type="checkbox" class="checked-multiple" id="riparianB">Cropland</div>    
                         </div>
 
                         <div class="body-copy-regular">Silvopasture (acres)</div>
                         <div class="practice-subcategories">
-                            <div class="body-copy-regular"><input type="checkbox" class="checked" id="silvopastureA">All Land Types</div>
+                            <div class="body-copy-regular"><input type="checkbox" class="checked-multiple" id="silvopastureA">All Land Types</div>
                         </div>
 
                         <div class="body-copy-regular">Tree/Shrub Establishment (acres)</div>
                         <div class="practice-subcategories">
-                            <div class="body-copy-regular"><input type="checkbox" class="checked" id="treeA">Grassland</div>
-                            <div class="body-copy-regular"><input type="checkbox" class="checked" id="treeB">Cropland</div>  
+                            <div class="body-copy-regular"><input type="checkbox" class="checked-multiple" id="treeA">Grassland</div>
+                            <div class="body-copy-regular"><input type="checkbox" class="checked-multiple" id="treeB">Cropland</div>  
                         </div>
 
                         <div class="body-copy-regular">Windbreak/Shelterbelt Establishment (Linear Feet)</div>
                         <div class="practice-subcategories">
-                            <div class="body-copy-regular"><input type="checkbox" class="checked" id="windbreakA">Grassland</div>
-                            <div class="body-copy-regular"><input type="checkbox" class="checked" id="windbreakB">Cropland</div>  
+                            <div class="body-copy-regular"><input type="checkbox" class="checked-multiple" id="windbreakA">Grassland</div>
+                            <div class="body-copy-regular"><input type="checkbox" class="checked-multiple" id="windbreakB">Cropland</div>  
                         </div>
                 
                     </div>
@@ -224,8 +212,8 @@
 
         <div class="calculator-outputs">
             <div class="reductions-total">
-                <div>CO2 Reductions Total</div>
-                <div class="units" id="grazingtotalUnitsResult">Units</div>
+                <div>CO2 Avoidance Total</div>
+                <div class="units" id="grazingtotalUnitsResult">MTCO₂e</div>
             </div>
             <hr>
             <div class="equivalent-items">
